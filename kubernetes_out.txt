@@ -1,0 +1,21 @@
+## Logs from ./make_prediction
+
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+## Logs from ./run_kubernetes
+pod/ml-microservice unchanged
+service/ml-microservice configured
+NAME                               READY   STATUS      RESTARTS      AGE
+ml-microservice                    1/1     Running     0             12s
+ml-microservice-648975cdd9-txhmc   0/1     OOMKilled   1 (19s ago)   25s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+Handling connection for 8000
+Handling connection for 8000
