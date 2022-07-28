@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![CyrilBaah](https://circleci.com/gh/CyrilBaah/project-ml-microservice-kubernetes.svg?style=svg)](https://app.circleci.com/pipelines/github/CyrilBaah/project-ml-microservice-kubernetes?branch=master)
 
 ## Project Overview
 
