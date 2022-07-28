@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ml-microservice
+  namespace: default
+  labels:
+    app: ml-microservice
+spec:
+  containers:
+  - name: ml-microservice
+    image: cyrilbaah/project-ml-microservice-kubernetes
+    resources:
+      limits:
+        cpu: 200m
+        memory: 500Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+    ports:
+    - containerPort:  8000
+      name:  http
+  restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-microservice
+  namespace: default
+spec:
+  selector:
+    app: ml-microservice
+  type: LoadBalancer
+  sessionAffinity: None
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 10800
+  ports:
+  - name: ml-microservice
+    protocol: TCP
+    port: 8000
+    targetPort: 8000
